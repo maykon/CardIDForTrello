@@ -1,0 +1,28 @@
+{
+  "name": "CardID for Trello",
+  "version": "1.0",
+  "description": "CardID for Trello",
+  "icons": {
+    "16": "images/card16.png",
+    "48": "images/card48.png",
+    "128": "images/card128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*"],
+      "css": ["css/style.css"],
+      "js": ["js/jquery.min.js", "js/cardid.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js",
+      "js/content.js"
+    ]
+  },
+  "permissions": [
+    "tabs", "webRequest",
+    "https://trello.com/*", "http://trello.com/*"
+  ],
+  "manifest_version": 2
+}
